@@ -1,0 +1,7 @@
+Have already downloaded npm express!!
+
+Partials...
+
+HTTP requests can only be sent once
+
+- Query strings: what comes after '?'  in the url line. Is used to send queries to the server
