@@ -14,6 +14,7 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 
 
 const app = express()
+const port = process.env.PORT || 3000 // 'env' allows to access local environment variables
 
 // setup handleBars engine and views location
 app.set('view engine', 'hbs')
@@ -88,7 +89,7 @@ app.get('*', (req, res) => {
 })
 
 
-// Used to set up the initial page
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+/** Port is used to set up initial page. Hiroku will provide us with its own port ID */
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
