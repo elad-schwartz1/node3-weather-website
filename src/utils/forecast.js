@@ -13,9 +13,11 @@ const forecast = (longitude, latitude, callback) => {
         } else if (body.error) {
             callback('Unable to find location')
         } else {
-            callback(undefined, {
+            console.log(body.current.weather_descriptions[1])
+            callback(undefined, { // here didnt have to include an object. Could have just returned a string
                 data: body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature +
-                    ' degrees out. It feels like: ' + body.current.feelslike
+                    ' degrees out. It feels like: ' + body.current.feelslike + '. This was recorded at time'
+                + ' ' + body.current.observation_time
             })
         }
     })
